@@ -13,6 +13,9 @@ namespace Geometrie
 
         public Cercle(Point centre, double rayon)
         {
+            if (rayon <= 0)
+                throw new GeometrieException("Le rayon doit être strictement positif", TypesDeForme.Cercle);
+
             Centre = centre;
             Rayon = rayon;
         }

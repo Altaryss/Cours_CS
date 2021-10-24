@@ -21,9 +21,14 @@ namespace Geometrie
             EstEquilateral = cote1 == cote2 && cote2 == cote3;
         }
 
-        public double CalculerAire()
+        public override double CalculerAire()
         {
-            // Formule de Heron
+            var a = this[0].CalculerDistance(this[1]);
+            var b = this[1].CalculerDistance(this[2]);
+            var c = this[2].CalculerDistance(this[3]);
+            var p = (a + b + c) / 2;
+
+            return Math.Sqrt(p * (p - a) * (p - b) * (p - c));
         }
     }
 }

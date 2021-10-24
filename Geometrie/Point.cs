@@ -40,7 +40,7 @@ namespace Geometrie
         // Constructeur
         public override string ToString()
         {
-            return $"({X};{Y})"; 
+            return $"({X};{Y})";
         }
         // Comme ça ne fait qu'un return quelque fois
         // Vous le verrez comme ça 

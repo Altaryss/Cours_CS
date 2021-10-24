@@ -5,9 +5,15 @@ VisualStudioVersion = 16.0.30517.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01-LesBases", "01-LesBases\01-LesBases.csproj", "{B2C0C36F-43A7-40E7-BE39-A14551DD15CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geometrie", "Geometrie\Geometrie.csproj", "{12883733-33C4-4402-A7FE-7724A21AEE4A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Geometrie", "Geometrie\Geometrie.csproj", "{12883733-33C4-4402-A7FE-7724A21AEE4A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geometrie_console", "Geometrie_console\Geometrie_console.csproj", "{40DD1A84-6C0A-4FE8-9D2C-8035D8ED3FAA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Geometrie_console", "Geometrie_console\Geometrie_console.csproj", "{40DD1A84-6C0A-4FE8-9D2C-8035D8ED3FAA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Geometrie.DAL", "..\..\..\..\..\bigdev\Cours_CS\Geometrie.DAL\Geometrie.DAL.csproj", "{E33C79E3-C4ED-4772-AF9E-AE203CBA6AAC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{E10D35A5-AC44-4ABE-91C8-F6419A9DD1A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geometrie.Tests", "Geometrie.Tests\Geometrie.Tests.csproj", "{841A7430-3767-4ADD-9F0A-FB38354B7DE4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,9 +33,20 @@ Global
 		{40DD1A84-6C0A-4FE8-9D2C-8035D8ED3FAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{40DD1A84-6C0A-4FE8-9D2C-8035D8ED3FAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{40DD1A84-6C0A-4FE8-9D2C-8035D8ED3FAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E33C79E3-C4ED-4772-AF9E-AE203CBA6AAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E33C79E3-C4ED-4772-AF9E-AE203CBA6AAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E33C79E3-C4ED-4772-AF9E-AE203CBA6AAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E33C79E3-C4ED-4772-AF9E-AE203CBA6AAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{841A7430-3767-4ADD-9F0A-FB38354B7DE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{841A7430-3767-4ADD-9F0A-FB38354B7DE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{841A7430-3767-4ADD-9F0A-FB38354B7DE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{841A7430-3767-4ADD-9F0A-FB38354B7DE4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{841A7430-3767-4ADD-9F0A-FB38354B7DE4} = {E10D35A5-AC44-4ABE-91C8-F6419A9DD1A0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {45F456A7-BAD0-484A-A8CC-B1008880C15C}

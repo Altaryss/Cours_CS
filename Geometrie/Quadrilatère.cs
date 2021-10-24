@@ -13,7 +13,7 @@ namespace Geometrie
         public bool EstUnRectangle { get; private set; }
         public bool EstUnCarre { get; private set; }
 
-        public Quadrilatère(Point a, Point b, Point c, Point d) :base(a,b,c,d)
+        public Quadrilatère(Point a, Point b, Point c, Point d) : base(a, b, c, d)
         {
             var cote1 = this[0].CalculerDistance(this[0]);
             var cote2 = this[1].CalculerDistance(this[2]);
@@ -26,6 +26,14 @@ namespace Geometrie
             EstUnLosange = cote1 == cote2 && cote2 == cote3 && cote3 == cote4;
             EstUnRectangle = EstUnParallelogramme && diagonale1 == diagonale2;
             EstUnCarre = EstUnLosange && EstUnRectangle;
+        }
+
+        public override double CalculerAire()
+        {
+            var t1 = new Triangle(this[0], this[1], this[2]);
+            var t2 = new Triangle(this[0], this[2], this[3]);
+
+            return t1.CalculerAire() + t2.CalculerAire();
         }
     }
 }

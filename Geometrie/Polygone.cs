@@ -48,10 +48,7 @@ namespace Geometrie
             return res;
         }
 
-        public double CalculerAire()
-        {
-            throw new NotImplementedException();
-        }
+        public abstract double CalculerAire();
 
         /// <summary>
         /// Pour pouvoir faire un foreach sur le polygone
