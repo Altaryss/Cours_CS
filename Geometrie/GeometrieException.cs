@@ -11,11 +11,12 @@ namespace Geometrie
         public TypesDeForme Type { get; private set; }
 
         public GeometrieException(string message, TypesDeForme unType)
-            : base(message)
+            :base(message)
         {
             Type = unType;
         }
     }
+
     public enum TypesDeForme
     {
         Cercle, Triangle, Polygone, Quadrilatere

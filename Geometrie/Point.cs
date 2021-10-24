@@ -2,53 +2,73 @@
 
 namespace Geometrie
 {
+    /// <summary>
+    /// Représente un point dans un repère à 2 dimensions
+    /// </summary>
     public class Point
     {
-        #region Champs & Accesseurs
-
-        // Champs privée
+        #region champs et accesseurs
+        //champ
         private int x;
 
-        // Accesseur (ou propriété), accès à un champs privée
+        //Accesseur (ou propriété)
+        /// <summary>
+        /// Abscisse du point
+        /// </summary>
         public int X
         {
             get { return x; }
-            set { x = value; }
+            private set { x = value; }
         }
 
-        // Accesseur simplifié
-        public int Y { get; set; }
+        //accesseur simplifié
+        /// <summary>
+        /// Ordonnée du point
+        /// </summary>
+        public int Y { get; private set; }
 
         #endregion
 
-        #region Constructeur
+        #region constructeur
+
         /// <summary>
-        /// Construit un Point
+        /// Construit un point
         /// </summary>
-        /// <param name="abscisse">Abscisse</param>
-        /// <param name="ordonnee">Ordonnée</param>
+        /// <param name="abscisse">Abscisse du point (X)</param>
+        /// <param name="ordonnee">Ordonnée du point (Y)</param>
         public Point(int abscisse, int ordonnee)
         {
             X = abscisse;
             Y = ordonnee;
         }
-
         #endregion
 
         #region Méthodes
 
-        // Constructeur
+        /// <summary>
+        /// Retourne une représentation sous forme de <see cref="string"/> du <see cref="Point"/>
+        /// </summary>
+        /// <returns>la chaine de caractères</returns>
         public override string ToString()
         {
-            return $"({X};{Y})";
+            return $"({X},{Y})";
         }
-        // Comme ça ne fait qu'un return quelque fois
-        // Vous le verrez comme ça 
-        // public override string ToString() => $"({X};{Y})";
+        //comme ça ne fait qu'un return quelque fois
+        //vous le verrez comme ça
+        //public override string ToString() => $"({X};{Y})";
 
-        public double CalculerDistance(Point autrePoint) => 
-            Math.Sqrt(Math.Pow(X - autrePoint.X, 2) * Math.Pow(Y - autrePoint.Y, 2));
+        /// <summary>
+        /// Calcule la distance du <see cref="Point"/> courant (this) par rapport à un autre <see cref="Point"/>
+        /// </summary>
+        /// <param name="autrePoint">Autre <see cref="Point"/></param>
+        /// <returns>la distance entre les 2 <see cref="Point"/></returns>
+        public double CalculerDistance(Point autrePoint)
+        {
+            if (autrePoint == null)
+                throw new ArgumentException("L'autre point ne peut pas être null","autrePoint");
 
+            return Math.Sqrt(Math.Pow(X - autrePoint.X, 2) + Math.Pow(Y - autrePoint.Y, 2));
+        }
         #endregion
     }
 }

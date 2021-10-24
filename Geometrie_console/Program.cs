@@ -10,34 +10,39 @@ namespace Geometrie_console
         {
             try
             {
-                var p1 = new Point(3, 4);
-                var p2 = new Point(4, 0);
-                var p3 = new Point(6, 5);
-                var p4 = new Point(7, 8);
+                var p1 = new Point(0, 0);
+                var p2 = new Point(0, 2);
+                var p3 = new Point(2, 2);
+                var p4 = new Point(2, 0);
+
+                var i = 2;
+                var j = 9 / i;
+
+                p1.CalculerDistance(p2);
 
                 var tri = new Triangle(p1, p2, p3);
-                var qua = new Quadrilatère(p1, p2, p3, p4);
-                var cer = new Cercle(p1, 3);
+                var qua = new Quadrilatere(p1, p2, p3, p4);
+                var cer = new Cercle(p1, 1);
 
-                var listeDeFormes = new List<iForme>() { tri, qua, cer };
+                var listeDeFormes = new List<IForme>() { tri };
                 foreach (var item in listeDeFormes)
                 {
-                    Console.WriteLine($"- {item.CalculerPerimetre()}");
-                    Console.WriteLine($"-- {item.CalculerAire()}");
+                    Console.WriteLine($"Périmètre: {item.CalculerPerimetre()}");
+                    Console.WriteLine($"Aire: {item.CalculerAire()}");
                 }
             }
-            catch (DivideByZeroException err)
+            catch (DivideByZeroException ex)
             {
-                Console.WriteLine($"Une division par 0 s'est produite : {err.Message}");
+                Console.WriteLine($"Une division par 0 s'est produite : {ex.Message}");
             }
-            catch (GeometrieException err)
+            catch (GeometrieException ex)
             {
-                Console.WriteLine($"Une erreur de géometrie s'est produite : {err.Message}");
-                Console.WriteLine($"Sur un objet de type : {err.Type}");
+                Console.WriteLine($"Une erreur de géométrie s'est produite : {ex.Message}");
+                Console.WriteLine($"Sur un objet de type : {ex.Type}");
             }
-            catch (Exception err)
+            catch (Exception ex)
             {
-                Console.WriteLine($"Une erreur inconnue s'est produite : {err.Message}");
+                Console.WriteLine($"Une erreur inconnue s'est produite : {ex.Message}");
             }
 
             
